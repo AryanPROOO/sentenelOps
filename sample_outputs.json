@@ -1,0 +1,44 @@
+[
+  {
+    "resource_id": "i-1",
+    "is_anomalous": true,
+    "anomaly_type": "over_provisioned",
+    "reason": "The resource with ID i-1 has both high cpu utilization (95th percentile 5) and high memory utilization (70%), indicating it might be over-provisioned. Additionally, as an internet-facing resource with an attached identity, it poses a potential security risk due to possible unauthorized access.",
+    "suggested_action": "Scale down the resource's CPU and allocate the resources on a lower instance class, and also enforce secure authentication and authorization mechanisms to mitigate the security risk.",
+    "confidence": 0.78,
+    "security_note": "Internet-facing resource with identity attached may introduce risk"
+  },
+  {
+    "resource_id": "i-2",
+    "is_anomalous": true,
+    "anomaly_type": "overloaded",
+    "reason": "The resource is experiencing CPU over utilization (average CPU usage is at 85%)",
+    "suggested_action": "Investigate and scale up or down the instance's CPU capacity to optimize performance",
+    "confidence": 0.5
+  },
+  {
+    "resource_id": "i-healthy-01",
+    "is_anomalous": false,
+    "anomaly_type": "none",
+    "reason": "Resource operating within optimal parameters. No anomalies detected.",
+    "suggested_action": "No action required.",
+    "confidence": 0.0
+  },
+  {
+    "resource_id": "i-public-db",
+    "is_anomalous": true,
+    "anomaly_type": "security_risk",
+    "reason": "This resource is an internet-facing database, potentially exposing sensitive data, and is attached to identity, which could be used for unauthorized access.",
+    "suggested_action": "Enable logging and monitoring for the database instance, and ensure role-based access control policies are enforced.",
+    "confidence": 0.38,
+    "security_note": "Internet-facing resource with identity attached may introduce risk"
+  },
+  {
+    "resource_id": "i-ghost-node",
+    "is_anomalous": false,
+    "anomaly_type": "none",
+    "reason": "Resource operating within optimal parameters. No anomalies detected.",
+    "suggested_action": "No action required.",
+    "confidence": 0.0
+  }
+]
